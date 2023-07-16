@@ -18,6 +18,7 @@
  */
 
 //SSD1306 OLED update loop
+
 #ifdef OLED_ENABLE
 	uint32_t oled_timer = 0; //OLED timeout
 	led_t led_usb_state;
@@ -228,13 +229,8 @@
 
 	#ifndef OLED_NO_SLAVE
 		static void print_logo_narrow(void) {
-			oled_set_cursor(0,2);
-			oled_write("SOLAR", false);
-			oled_set_cursor(0,3);
-			oled_write("TMPST", false);
-
 			#ifdef OLED_LOGO
-				render_logo(0,7); //Not defining this in config.h will save space (+112).
+				render_logo(0,2); //Not defining this in config.h will save space (+112).
 			#endif
 
 			/* wpm counter */
